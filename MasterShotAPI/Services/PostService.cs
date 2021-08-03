@@ -18,8 +18,15 @@ namespace MasterShotAPI.Services
 
         public async Task<Post> CreatePost(Post post)
         {
-            this.repository.Add(post);
+            post.DateCreated = DateTime.UtcNow;
+            post.DateModified = DateTime.UtcNow;
+            await this.repository.Add(post);
             return post;
+        }
+
+        public async Task<Post> GetPost(int id)
+        {
+            return await this.repository.Get(id);
         }
     }
 }

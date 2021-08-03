@@ -70,3 +70,4 @@ C:\Users\deniz\OneDrive\Desktop\Projects\master-shot\master-shot-api\MasterShotA
 C:\Users\deniz\OneDrive\Desktop\Projects\master-shot\master-shot-api\MasterShotAPI\MasterShotAPI\obj\Debug\net5.0\ref\MasterShotAPI.dll
 C:\Users\deniz\OneDrive\Desktop\Projects\master-shot\master-shot-api\MasterShotAPI\MasterShotAPI\obj\Debug\net5.0\MasterShotAPI.pdb
 C:\Users\deniz\OneDrive\Desktop\Projects\master-shot\master-shot-api\MasterShotAPI\MasterShotAPI\obj\Debug\net5.0\MasterShotAPI.genruntimeconfig.cache
+C:\Users\deniz\OneDrive\Desktop\Projects\master-shot\master-shot-api\MasterShotAPI\MasterShotAPI\obj\Debug\net5.0\MasterShotAPI.csproj.AssemblyReference.cache

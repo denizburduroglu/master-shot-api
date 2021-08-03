@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MasterShotAPI.Migrations
 {
     [DbContext(typeof(MasterShotDbContext))]
-    [Migration("20210802222425_initialMigration")]
+    [Migration("20210803133115_initialMigration")]
     partial class initialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,11 +29,9 @@ namespace MasterShotAPI.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DateCreated")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
+                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DateModified")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Details")

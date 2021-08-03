@@ -21,10 +21,17 @@ namespace MasterShotAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePost(Post post)
+        public async Task<IActionResult> CreatePost(Post post)
         {
-            this._postService.CreatePost(post);
+            await this._postService.CreatePost(post);
             return Ok();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPost(int id)
+        {
+            var post = await this._postService.GetPost(id);
+            return Ok(post);
         }
     }
 }

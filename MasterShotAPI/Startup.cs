@@ -66,7 +66,7 @@ namespace MasterShotAPI
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient(typeof(IPostService), typeof(PostService));
 
             services.AddControllers();
