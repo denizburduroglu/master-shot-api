@@ -23,5 +23,9 @@ namespace MasterShotAPI.Models
         public string Title { get; set; }
         [Required]
         public string Details { get; set; }
+        [Required]
+        public string ImdbID { get; set; }
+        [Required]
+        public string UserEmail { get; set; }
     }
 }

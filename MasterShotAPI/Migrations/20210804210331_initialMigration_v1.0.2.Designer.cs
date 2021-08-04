@@ -4,14 +4,16 @@ using MasterShotAPI.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MasterShotAPI.Migrations
 {
     [DbContext(typeof(MasterShotDbContext))]
-    partial class MasterShotDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210804210331_initialMigration_v1.0.2")]
+    partial class initialMigration_v102
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MasterShotAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class PostController : ControllerBase
     {
@@ -23,6 +23,8 @@ namespace MasterShotAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePost(Post post)
         {
+            post.DateCreated = DateTime.UtcNow;
+            post.DateModified = DateTime.UtcNow;
             await this._postService.CreatePost(post);
             return Ok();
         }
@@ -32,6 +34,13 @@ namespace MasterShotAPI.Controllers
         {
             var post = await this._postService.GetPost(id);
             return Ok(post);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPostsBasedOnUserEmails(IEnumerable<string> userEmails)
+        {
+            var posts = await this._postService.GetPostsBasedOnUserEmails(userEmails);
+            return Ok(posts);
         }
     }
 }

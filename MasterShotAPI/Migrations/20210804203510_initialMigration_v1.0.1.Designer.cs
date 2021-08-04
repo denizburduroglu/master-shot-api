@@ -4,14 +4,16 @@ using MasterShotAPI.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MasterShotAPI.Migrations
 {
     [DbContext(typeof(MasterShotDbContext))]
-    partial class MasterShotDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210804203510_initialMigration_v1.0.1")]
+    partial class initialMigration_v101
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,16 +38,12 @@ namespace MasterShotAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImdbID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
-                    b.Property<string>("UserEmail")
+                    b.Property<string>("imdbID")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

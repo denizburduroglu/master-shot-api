@@ -18,8 +18,6 @@ namespace MasterShotAPI.Services
 
         public async Task<Post> CreatePost(Post post)
         {
-            post.DateCreated = DateTime.UtcNow;
-            post.DateModified = DateTime.UtcNow;
             await this.repository.Add(post);
             return post;
         }
@@ -27,6 +25,15 @@ namespace MasterShotAPI.Services
         public async Task<Post> GetPost(int id)
         {
             return await this.repository.Get(id);
+        }
+
+        public async Task<IEnumerable<Post>> GetPostsBasedOnUserEmails(IEnumerable<string> userEmails)
+        {
+            IEnumerable<Post> posts =
+                from post in await this.repository.GetAll()
+                where userEmails.Contains(post.UserEmail)
+                select post;
+            return posts;
         }
     }
 }
